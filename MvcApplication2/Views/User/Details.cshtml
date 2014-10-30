@@ -1,0 +1,25 @@
+﻿@model MvcApplication2.Models.UserDetailViewModel
+<h2>Details</h2>
+<fieldset>
+    <legend>User</legend>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User.Name)
+    </div>
+    <div class="display-label">
+         Email
+    </div>
+    <div class="display-field">
+        @foreach (var data in Model.EmailList)
+        { 
+            @(data.Value)<br/>
+        }
+    </div>
+   
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.User.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
